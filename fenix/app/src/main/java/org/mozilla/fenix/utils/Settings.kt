@@ -146,8 +146,8 @@ class Settings(private val appContext: Context) : PreferencesHolder {
      */
     var showTopSitesFeature by lazyFeatureFlagPreference(
         appContext.getPreferenceKey(R.string.pref_key_show_top_sites),
-        featureFlag = true,
-        default = { homescreenSections[HomeScreenSection.TOP_SITES] == true },
+        featureFlag = false,
+        default = { homescreenSections[HomeScreenSection.TOP_SITES] == false },
     )
 
     var numberOfAppLaunches by intPreference(
@@ -1629,7 +1629,7 @@ class Settings(private val appContext: Context) : PreferencesHolder {
     var showPocketRecommendationsFeature by lazyFeatureFlagPreference(
         appContext.getPreferenceKey(R.string.pref_key_pocket_homescreen_recommendations),
         featureFlag = FeatureFlags.isPocketRecommendationsFeatureEnabled(appContext),
-        default = { homescreenSections[HomeScreenSection.POCKET] == true },
+        default = { homescreenSections[HomeScreenSection.POCKET] == false },
     )
 
     /**
@@ -1637,7 +1637,7 @@ class Settings(private val appContext: Context) : PreferencesHolder {
      */
     val showPocketSponsoredStories by lazyFeatureFlagPreference(
         key = appContext.getPreferenceKey(R.string.pref_key_pocket_sponsored_stories),
-        default = { homescreenSections[HomeScreenSection.POCKET_SPONSORED_STORIES] == true },
+        default = { homescreenSections[HomeScreenSection.POCKET_SPONSORED_STORIES] == false },
         featureFlag = FeatureFlags.isPocketSponsoredStoriesFeatureEnabled(appContext),
     )
 

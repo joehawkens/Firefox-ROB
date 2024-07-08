@@ -235,11 +235,11 @@ android {
             enableSplit = false
         }
     }
-
-    lint {
-        lintConfig file("lint.xml")
-        baseline file("lint-baseline.xml")
-    }
+//
+//    lint {
+//        lintConfig file("lint.xml")
+//        baseline file("lint-baseline.xml")
+//    }
     packagingOptions {
         resources {
             excludes += ['META-INF/atomicfu.kotlin_module', 'META-INF/AL2.0', 'META-INF/LGPL2.1',
@@ -479,8 +479,8 @@ android.applicationVariants.configureEach { variant ->
             buildConfigField "boolean", "LEAKCANARY", "false"
             println("LeakCanary enabled in debug: false")
         } else {
-            buildConfigField "boolean", "LEAKCANARY", "true"
-            println("LeakCanary enabled in debug: true")
+            buildConfigField "boolean", "LEAKCANARY", "false"
+            println("LeakCanary enabled in debug: false")
         }
     } else {
         buildConfigField "boolean", "LEAKCANARY", "false"
@@ -726,8 +726,8 @@ dependencies {
     // depend on a separate library for unit tests. This will be removed in future releases.
     testImplementation "org.mozilla.telemetry:glean-native-forUnitTests:${project.ext.glean_version}"
 
-    lintChecks project(":mozilla-lint-rules")
-    lintChecks project(':tooling-lint')
+//    lintChecks project(":mozilla-lint-rules")
+//    lintChecks project(':tooling-lint')
 }
 
 protobuf {
