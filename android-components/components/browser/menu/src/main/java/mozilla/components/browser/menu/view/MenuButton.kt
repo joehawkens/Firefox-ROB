@@ -48,10 +48,10 @@ class MenuButton @JvmOverloads constructor(
          * Change the menu button appearance when the menu list changes.
          */
         override fun onMenuListSubmit(list: List<MenuCandidate>) {
-            val effect = list.effects().max()
-
-            // If a highlighted item is found, show the indicator
-            setEffect(effect)
+//            val effect = list.effects().max()
+//
+//            // If a highlighted item is found, show the indicator
+//            setEffect(effect)
         }
 
         override fun onDismiss() = notifyObservers { onDismiss() }
@@ -111,10 +111,12 @@ class MenuButton @JvmOverloads constructor(
 
     init {
         View.inflate(context, R.layout.mozac_browser_menu_button, this)
-        setOnClickListener(this)
+        //setOnClickListener(this)
         menuIcon = findViewById(R.id.icon)
         highlightView = findViewById(R.id.highlight)
         notificationIconView = findViewById(R.id.notification_dot)
+
+
 
         // Hook up deprecated callbacks using new observer system
         @Suppress("Deprecation")
@@ -123,37 +125,20 @@ class MenuButton @JvmOverloads constructor(
             override fun onDismiss() = this@MenuButton.onDismiss()
         }
         register(internalObserver)
+
+        menuIcon.visibility = View.GONE
+        highlightView.visibility = View.GONE
+        notificationIconView.visibility = View.GONE
+
+        isClickable = false
+        isFocusable = false
     }
 
     /**
      * Shows the menu, or dismisses it if already open.
      */
     override fun onClick(v: View) {
-        this.hideKeyboard()
 
-        // If a legacy menu is open, dismiss it.
-        if (menu != null) {
-            menu?.dismiss()
-            return
-        }
-
-        val menuController = menuController
-        if (menuController != null) {
-            // Use the newer menu controller if set
-            menuController.show(anchor = this)
-        } else {
-            menu = menuBuilder?.build(context)
-            val endAlwaysVisible = menuBuilder?.endOfMenuAlwaysVisible ?: false
-            menu?.show(
-                anchor = this,
-                orientation = getOrientation(),
-                endOfMenuAlwaysVisible = endAlwaysVisible,
-            ) {
-                menu = null
-                notifyObservers { onDismiss() }
-            }
-        }
-        notifyObservers { onShow() }
     }
 
     /**
@@ -169,13 +154,13 @@ class MenuButton @JvmOverloads constructor(
         when (effect) {
             is HighPriorityHighlightEffect -> {
                 highlightView.imageTintList = ColorStateList.valueOf(effect.backgroundTint)
-                highlightView.visibility = View.VISIBLE
+                highlightView.visibility = View.GONE
                 notificationIconView.visibility = View.GONE
             }
             is LowPriorityHighlightEffect -> {
                 notificationIconView.setColorFilter(effect.notificationTint)
                 highlightView.visibility = View.GONE
-                notificationIconView.visibility = View.VISIBLE
+                notificationIconView.visibility = View.GONE
             }
             null -> {
                 highlightView.visibility = View.GONE

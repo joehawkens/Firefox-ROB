@@ -12,6 +12,9 @@
         android:id="@+id/search_selector"
         android:layout_width="40dp"
         android:layout_height="28dp"
+        android:visibility="gone"
+        android:clickable="false"
+        android:focusable="false"
         android:layout_marginHorizontal="8dp"
         app:cardBackgroundColor="?attr/layer2"
         app:cardCornerRadius="4dp"
@@ -19,6 +22,9 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/tab_item"
+            android:visibility="gone"
+            android:clickable="false"
+            android:focusable="false"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginVertical="2dp"
@@ -27,6 +33,9 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/icon"
+                android:visibility="gone"
+                android:clickable="false"
+                android:focusable="false"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_gravity="center"
@@ -37,6 +46,9 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/arrow"
+                android:visibility="gone"
+                android:clickable="false"
+                android:focusable="false"
                 android:layout_width="6dp"
                 android:layout_height="6dp"
                 android:importantForAccessibility="no"

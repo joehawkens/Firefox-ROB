@@ -7,8 +7,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:clickable="true"
-    android:focusable="true"
+    android:clickable="false"
+    android:focusable="false"
     android:background="?android:selectableItemBackgroundBorderless"
     tools:parentTag="android.widget.FrameLayout">
 
@@ -22,6 +22,7 @@
         android:visibility="gone" />
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/icon"
+        android:visibility="gone"
         app:srcCompat="@drawable/mozac_ic_ellipsis_vertical_24"
         android:layout_height="match_parent"
         android:layout_width="match_parent"

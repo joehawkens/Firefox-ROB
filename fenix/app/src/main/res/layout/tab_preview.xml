@@ -9,6 +9,9 @@
         android:id="@+id/previewThumbnail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clickable="false"
+        android:focusableInTouchMode="false"
+        android:focusable="false"
         android:background="?layer2" />
 
     <LinearLayout
@@ -19,26 +22,39 @@
         android:background="?bottomBarBackground"
         android:elevation="5dp"
         android:foregroundGravity="bottom"
+        android:clickable="false"
+        android:focusableInTouchMode="false"
+        android:focusable="false"
         android:orientation="horizontal">
 
         <View
             android:id="@+id/toolbar_wrapper"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
+            android:focusable="false"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="0dp"
             android:layout_weight="1"
+
             android:background="@drawable/home_search_background" />
 
         <mozilla.components.ui.tabcounter.TabCounter
             android:id="@+id/tab_button"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
+            android:focusable="false"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="center" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/menuButton"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
+            android:focusable="false"
             android:layout_width="36dp"
             android:layout_height="48dp"
             android:layout_gravity="center"

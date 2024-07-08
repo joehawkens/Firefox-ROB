@@ -59,9 +59,11 @@ class ToolbarView(
     }
 
     private fun updateLayout(view: View) {
-        val redesignEnabled = IncompleteRedesignToolbarFeature(context.settings()).isEnabled
-        binding.menuButton.isVisible = !redesignEnabled
-        binding.tabButton.isVisible = !redesignEnabled
+        //val redesignEnabled = IncompleteRedesignToolbarFeature(context.settings()).isEnabled
+        binding.menuButton.isVisible = false
+        binding.tabButton.isVisible = false
+        binding.searchSelectorButton.isVisible = false
+
 
         when (context.settings().toolbarPosition) {
             ToolbarPosition.TOP -> {

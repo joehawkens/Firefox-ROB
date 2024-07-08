@@ -102,6 +102,9 @@
         tools:listitem="@layout/collection_home_list_row"
         tools:itemCount="3"
         android:visibility="gone"
+        android:clickable="false"
+        android:focusableInTouchMode="false"
+        android:focusable="false"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -110,6 +113,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        android:clickable="false"
+        android:focusableInTouchMode="false"
+        android:focusable="false"
         tools:context=".home.HomeFragment">
 
         <androidx.compose.ui.platform.ComposeView
@@ -118,11 +124,17 @@
             app:layout_constraintBottom_toTopOf="@id/bottom_bar"
             app:layout_constraintTop_toTopOf="parent"
             android:visibility="gone"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
+            android:focusable="false"
             android:layout_height="@dimen/tab_strip_height" />
 
         <View
             android:id="@+id/bottom_bar"
             android:layout_width="0dp"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
+            android:focusable="false"
             android:layout_height="56dp"
             android:background="?bottomBarBackground"
             android:foregroundGravity="bottom"
@@ -137,9 +149,10 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="0dp"
             android:background="@drawable/home_search_background"
-            android:clickable="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
+            android:focusable="false"
             android:contentDescription="@string/search_hint"
-            android:focusable="true"
             app:layout_constraintBottom_toBottomOf="@id/bottom_bar"
             app:layout_constraintEnd_toStartOf="@+id/accessory_button_barrier"
             app:layout_constraintStart_toStartOf="parent"
@@ -147,6 +160,9 @@
 
             <org.mozilla.fenix.search.toolbar.SearchSelector
                 android:id="@+id/search_selector_button"
+                android:clickable="false"
+                android:focusableInTouchMode="false"
+                android:focusable="false"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|center_vertical"
@@ -157,8 +173,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|center_vertical"
-                android:clickable="false"
                 android:ellipsize="end"
+                android:clickable="false"
+                android:focusableInTouchMode="false"
                 android:focusable="false"
                 android:importantForAccessibility="no"
                 android:lines="1"
@@ -179,6 +196,9 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:clipChildren="false"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
+            android:focusable="false"
             app:layout_constraintTop_toTopOf="@id/bottom_bar"
             app:layout_constraintBottom_toBottomOf="@id/bottom_bar"
             app:layout_constraintEnd_toStartOf="@+id/menuButton"
@@ -188,6 +208,9 @@
             android:id="@+id/menuButton"
             android:layout_width="36dp"
             android:layout_height="48dp"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
+            android:focusable="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/bottom_bar"
             app:layout_constraintBottom_toBottomOf="@id/bottom_bar"/>
@@ -196,6 +219,9 @@
             android:id="@+id/bottomBarShadow"
             android:layout_width="0dp"
             android:layout_height="1dp"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
+            android:focusable="false"
             android:background="@color/bottom_bar_shadow"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

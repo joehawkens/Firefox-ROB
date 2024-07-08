@@ -57,19 +57,22 @@ class SearchSelectorToolbarAction(
                 )
             }
 
-            setOnClickListener {
-                val orientation = if (context.settings().shouldUseBottomToolbar) {
-                    Orientation.UP
-                } else {
-                    Orientation.DOWN
-                }
+            isEnabled = false
+            alpha = 0.7f
 
-                UnifiedSearch.searchMenuTapped.record(NoExtras())
-                menu.menuController.show(
-                    anchor = it.findViewById(R.id.search_selector),
-                    orientation = orientation,
-                )
-            }
+//            setOnClickListener {
+////                val orientation = if (context.settings().shouldUseBottomToolbar) {
+////                    Orientation.UP
+////                } else {
+////                    Orientation.DOWN
+////                }
+////
+////                UnifiedSearch.searchMenuTapped.record(NoExtras())
+////                menu.menuController.show(
+////                    anchor = it.findViewById(R.id.search_selector),
+////                    orientation = orientation,
+////                )
+//            }
 
             val topPadding = resources.getDimensionPixelSize(R.dimen.search_engine_engine_icon_top_margin)
             setPadding(0, topPadding, 0, 0)

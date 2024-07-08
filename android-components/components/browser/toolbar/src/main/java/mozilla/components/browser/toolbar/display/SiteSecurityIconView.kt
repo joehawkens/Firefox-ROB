@@ -35,6 +35,7 @@ internal class SiteSecurityIconView @JvmOverloads constructor(
             field = value
         }
 
+
     override fun onCreateDrawableState(extraSpace: Int): IntArray {
         return when (siteSecurity) {
             SiteSecurity.INSECURE, null -> super.onCreateDrawableState(extraSpace)
