@@ -61,6 +61,11 @@ class TabCounter @JvmOverloads constructor(
         }
 
         animationSet = createAnimatorSet()
+
+        isEnabled = false
+        isVisible = false
+        isFocusable = false
+        isClickable = false
     }
 
     /**
@@ -113,9 +118,6 @@ class TabCounter @JvmOverloads constructor(
     }
 
     fun setCount(count: Int) {
-        updateContentDescription(count)
-        adjustTextSize(count)
-        counterText.text = formatCountForDisplay(count)
         INTERNAL_COUNT = count
     }
 
@@ -281,7 +283,7 @@ class TabCounter @JvmOverloads constructor(
     companion object {
         var INTERNAL_COUNT = 0
 
-        const val MAX_VISIBLE_TABS = 99
+        const val MAX_VISIBLE_TABS = 1
         const val SO_MANY_TABS_OPEN = "∞"
         const val INFINITE_CHAR_PADDING_BOTTOM = 6
 
