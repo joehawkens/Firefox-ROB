@@ -2,7 +2,9 @@
 
 The world is becoming increasingly dependent on smartphone and internet access. Gone are the days where you can walk into a DMV, Restauraunt, Doctors Office, Movie Theatre, or even small businesses without being required to use your smartphone in some capacity to be served. This is the reality of the world today. But what if you want to step away from the constant distraction and noise of internet? What if you're addicted to mindless internet browsing? What if you're trying to stay productive, but the constant distraction of the world's knowledge at your fingertips constantly beckons you?
 
-This modified internet browser aims to solve that very problem. Most the time, QR codes and hyperlink text messages are provided to customers to access services available on the internet, so Firefox ROB only allows you to access the internet through these two ways. The search bar has been disabled, to prevent you from being immediately sucked into a browsing frenzy that wastes your time and energy.
+This modified internet browser aims to solve that very problem. Most the time, QR codes and hyperlink text messages are provided to customers to access services available on the internet, so Firefox ROB only allows you to access the internet through these two ways. The search bar has been disabled to prevent you from being immediately sucked into a browsing frenzy that wastes your time and energy.
+
+Put it this way: you have access when you need it and don't have access when you don't need it.
 
 
 ## TODO:
