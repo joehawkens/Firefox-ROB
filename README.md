@@ -9,19 +9,22 @@ Put it this way: you have access when you need it and don't have access when you
 
 ## TODO:
 
-- Remove Bloat Files from Original Firefox repo
-- Disable + Grey Out Search Bar (Browsing)
 - Add Logo + Icon
-
+- Remove Bloat Files from Original Firefox repo (Testing, third-party libraries, etc.) i.e. Lower the size of the program.
 
 ## DONE:
 
+- Disable + Grey Out Search Bar (Browsing + Home)
 - Disable + Grey Out Search Bar (Home)
 - Remove Settings Button (Home)
 - Remove Canary (Debugging Application)
 - Remove Homepage Bloat
+- Removed Tabs Button
+- Remove tab swiping (Max Tabs = 1)
+- Remove Onboarding Popups
+
 
 
 ## Bonus Features TODO:
 
-- Timed Browsing
+- Timed Browsing (Settings.kt - GetabTimeout)
