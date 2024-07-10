@@ -22,6 +22,6 @@ Put it this way: you have access when you need it and don't have access when you
 - Remove Homepage Bloat
 
 
-## Bonus Features:
+## Bonus Features TODO:
 
 - Timed Browsing
