@@ -1220,7 +1220,7 @@ class Settings(private val appContext: Context) : PreferencesHolder {
 
     var shouldShowVoiceSearch by booleanPreference(
         appContext.getPreferenceKey(R.string.pref_key_show_voice_search),
-        default = true,
+        default = false,
     )
 
     /**

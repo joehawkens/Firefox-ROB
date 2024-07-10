@@ -27,7 +27,7 @@
         android:layout="@layout/preference_category_no_icon_style">
          <SwitchPreference
             app:iconSpaceReserved="false"
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="@string/pref_key_show_search_suggestions"
             android:title="@string/preferences_show_search_suggestions" />
         <CheckBoxPreference
@@ -46,12 +46,12 @@
         android:layout="@layout/preference_category_no_icon_style">
          <SwitchPreference
             app:iconSpaceReserved="false"
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="@string/pref_key_search_browsing_history"
             android:title='@string/preferences_search_browsing_history' />
         <SwitchPreference
             app:iconSpaceReserved="false"
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="@string/pref_key_search_bookmarks"
             android:title='@string/preferences_search_bookmarks' />
         <SwitchPreference
@@ -82,17 +82,17 @@
         android:layout="@layout/preference_category_no_icon_style">
         <SwitchPreference
             app:iconSpaceReserved="false"
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="@string/pref_key_show_clipboard_suggestions"
             android:title="@string/preferences_show_clipboard_suggestions" />
         <SwitchPreference
             app:iconSpaceReserved="false"
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="@string/pref_key_show_voice_search"
             android:title="@string/preferences_show_voice_search" />
         <SwitchPreference
             app:iconSpaceReserved="false"
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="@string/pref_key_enable_autocomplete_urls"
             android:title="@string/preferences_enable_autocomplete_urls" />
     </PreferenceCategory>

@@ -803,30 +803,7 @@ open class InlineAutocompleteEditText @JvmOverloads constructor(
 
     @Suppress("ClickableViewAccessibility")
     override fun onTouchEvent(event: MotionEvent): Boolean {
-        return if (Build.VERSION.SDK_INT == Build.VERSION_CODES.M &&
-            event.actionMasked == MotionEvent.ACTION_UP
-        ) {
-            // Android 6 occasionally throws a NullPointerException inside Editor.onTouchEvent()
-            // for ACTION_UP when attempting to display (uninitialised) text handles. The Editor
-            // and TextView IME interactions are quite complex, so I don't know how to properly
-            // work around this issue, but we can at least catch the NPE to prevent crashing
-            // the whole app.
-            // (Editor tries to make both selection handles visible, but in certain cases they haven't
-            // been initialised yet, causing the NPE. It doesn't bother to check the selection handle
-            // state, and making some other calls to ensure the handles exist doesn't seem like a
-            // clean solution either since I don't understand most of the selection logic. This implementation
-            // only seems to exist in Android 6, both Android 5 and 7 have different implementations.)
-            try {
-                super.onTouchEvent(event)
-            } catch (ignored: NullPointerException) {
-                // Ignore this (see above) - since we're now in an unknown state let's clear all selection
-                // (which is still better than an arbitrary crash that we can't control):
-                clearFocus()
-                true
-            }
-        } else {
-            super.onTouchEvent(event)
-        }
+        return false
     }
 
     @VisibleForTesting
