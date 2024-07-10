@@ -52,9 +52,9 @@ internal class OriginView @JvmOverloads constructor(
         isFocusable = true
 
         setOnClickListener {
-            if (onUrlClicked()) {
-                toolbar.editMode()
-            }
+//            if (onUrlClicked()) {
+//                toolbar.editMode()
+//            }
         }
 
         val fadingEdgeSize = resources.getDimensionPixelSize(

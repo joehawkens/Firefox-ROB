@@ -165,14 +165,14 @@ class ToolbarView(
             // we have the most up to date text
             interactor.onTextChanged(view.url.toString())
 
-            // If search terms are displayed, move the cursor to the end instead of selecting all text.
-            if (searchState.searchTerms.isNotBlank()) {
-                view.editMode(cursorPlacement = Toolbar.CursorPlacement.END)
-            } else {
-                view.editMode()
-            }
+//            // If search terms are displayed, move the cursor to the end instead of selecting all text.
+//            if (searchState.searchTerms.isNotBlank()) {
+//                view.editMode(cursorPlacement = Toolbar.CursorPlacement.END)
+//            } else {
+//                view.editMode()
+//            }
 
-            isInitialized = true
+            isInitialized = false
         }
 
         configureAutocomplete(searchState.searchEngineSource)

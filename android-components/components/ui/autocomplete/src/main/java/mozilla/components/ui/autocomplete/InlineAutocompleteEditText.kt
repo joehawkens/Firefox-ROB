@@ -107,6 +107,8 @@ open class InlineAutocompleteEditText @JvmOverloads constructor(
         fun startsWith(text: String): Boolean = this.text.startsWith(text)
     }
 
+
+
     private var commitListener: OnCommitListener? = null
     fun setOnCommitListener(l: OnCommitListener) { commitListener = l }
 

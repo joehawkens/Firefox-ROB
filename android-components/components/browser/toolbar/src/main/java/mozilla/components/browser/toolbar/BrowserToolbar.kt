@@ -224,11 +224,11 @@ class BrowserToolbar @JvmOverloads constructor(
     }
 
     override fun setSearchTerms(searchTerms: String) {
-        this.searchTerms = searchTerms.trimmed()
-
-        if (state == State.EDIT) {
-            edit.editSuggestion(this.searchTerms)
-        }
+//        this.searchTerms = searchTerms.trimmed()
+//
+//        if (state == State.EDIT) {
+//            edit.editSuggestion(this.searchTerms)
+//        }
     }
 
     override fun displayProgress(progress: Int) {
@@ -371,19 +371,19 @@ class BrowserToolbar @JvmOverloads constructor(
      * @param cursorPlacement Where the cursor should be placed after focusing on the URL input field.
      */
     override fun editMode(cursorPlacement: Toolbar.CursorPlacement) {
-        val urlValue = if (searchTerms.isEmpty()) url else searchTerms
-        edit.updateUrl(urlValue.toString(), false)
-        updateState(State.EDIT)
-        edit.focus()
-
-        when (cursorPlacement) {
-            Toolbar.CursorPlacement.ALL -> {
-                edit.selectAll()
-            }
-            Toolbar.CursorPlacement.END -> {
-                edit.selectEnd()
-            }
-        }
+//        val urlValue = if (searchTerms.isEmpty()) url else searchTerms
+//        edit.updateUrl(urlValue.toString(), false)
+//        updateState(State.EDIT)
+//        edit.focus()
+//
+//        when (cursorPlacement) {
+//            Toolbar.CursorPlacement.ALL -> {
+//                edit.selectAll()
+//            }
+//            Toolbar.CursorPlacement.END -> {
+//                edit.selectEnd()
+//            }
+//        }
     }
 
     /**
