@@ -329,7 +329,7 @@ class Settings(private val appContext: Context) : PreferencesHolder {
         get() = isCrashReportEnabledInBuild &&
             preferences.getBoolean(
                 appContext.getPreferenceKey(R.string.pref_key_crash_reporter),
-                true,
+                false,
             )
 
     val isRemoteDebuggingEnabled by booleanPreference(
@@ -339,7 +339,7 @@ class Settings(private val appContext: Context) : PreferencesHolder {
 
     var isTelemetryEnabled by booleanPreference(
         appContext.getPreferenceKey(R.string.pref_key_telemetry),
-        default = true,
+        default = false,
     )
 
     var isMarketingTelemetryEnabled by booleanPreference(
@@ -349,7 +349,7 @@ class Settings(private val appContext: Context) : PreferencesHolder {
 
     var isExperimentationEnabled by booleanPreference(
         appContext.getPreferenceKey(R.string.pref_key_experimentation),
-        default = true,
+        default = false,
     )
 
     var isOverrideTPPopupsForPerformanceTest = false
@@ -364,7 +364,7 @@ class Settings(private val appContext: Context) : PreferencesHolder {
 
     var shouldShowPrivacyPopWindow by booleanPreference(
         appContext.getPreferenceKey(R.string.pref_key_privacy_pop_window),
-        default = true,
+        default = false,
     )
 
     var shouldUseLightTheme by booleanPreference(
@@ -384,22 +384,22 @@ class Settings(private val appContext: Context) : PreferencesHolder {
 
     val shouldShowHistorySuggestions by booleanPreference(
         appContext.getPreferenceKey(R.string.pref_key_search_browsing_history),
-        default = true,
+        default = false,
     )
 
     val shouldShowBookmarkSuggestions by booleanPreference(
         appContext.getPreferenceKey(R.string.pref_key_search_bookmarks),
-        default = true,
+        default = false,
     )
 
     val shouldShowSyncedTabsSuggestions by booleanPreference(
         appContext.getPreferenceKey(R.string.pref_key_search_synced_tabs),
-        default = true,
+        default = false,
     )
 
     val shouldShowClipboardSuggestions by booleanPreference(
         appContext.getPreferenceKey(R.string.pref_key_show_clipboard_suggestions),
-        default = true,
+        default = false,
     )
 
     val shouldShowSearchShortcuts by booleanPreference(
@@ -414,12 +414,12 @@ class Settings(private val appContext: Context) : PreferencesHolder {
 
     var manuallyCloseTabs by booleanPreference(
         appContext.getPreferenceKey(R.string.pref_key_close_tabs_manually),
-        default = true,
+        default = false,
     )
 
     var closeTabsAfterOneDay by booleanPreference(
         appContext.getPreferenceKey(R.string.pref_key_close_tabs_after_one_day),
-        default = false,
+        default = true,
     )
 
     var closeTabsAfterOneWeek by booleanPreference(
@@ -484,7 +484,7 @@ class Settings(private val appContext: Context) : PreferencesHolder {
      */
     var alwaysOpenTheHomepageWhenOpeningTheApp by booleanPreference(
         appContext.getPreferenceKey(R.string.pref_key_start_on_home_always),
-        default = false,
+        default = true,
     )
 
     /**
@@ -504,7 +504,7 @@ class Settings(private val appContext: Context) : PreferencesHolder {
             openHomepageAfterFourHoursOfInactivity -> timeNowInMillis() - lastBrowseActivity >= FOUR_HOURS_MS
             alwaysOpenTheHomepageWhenOpeningTheApp -> true
             alwaysOpenTheLastTabWhenOpeningTheApp -> false
-            else -> false
+            else -> true
         }
     }
 
@@ -896,7 +896,7 @@ class Settings(private val appContext: Context) : PreferencesHolder {
 
     var shouldDeleteBrowsingDataOnQuit by booleanPreference(
         appContext.getPreferenceKey(R.string.pref_key_delete_browsing_data_on_quit),
-        default = false,
+        default = true,
     )
 
     var deleteOpenTabs by booleanPreference(
@@ -1026,12 +1026,12 @@ class Settings(private val appContext: Context) : PreferencesHolder {
 
     val shouldShowSearchSuggestions by booleanPreference(
         appContext.getPreferenceKey(R.string.pref_key_show_search_suggestions),
-        default = true,
+        default = false,
     )
 
     val shouldAutocompleteInAwesomebar by booleanPreference(
         appContext.getPreferenceKey(R.string.pref_key_enable_autocomplete_urls),
-        default = true,
+        default = false,
     )
 
     var defaultTopSitesAdded by booleanPreference(
@@ -1098,7 +1098,7 @@ class Settings(private val appContext: Context) : PreferencesHolder {
 
     var shouldShowInactiveTabsOnboardingPopup by booleanPreference(
         appContext.getPreferenceKey(R.string.pref_key_should_show_inactive_tabs_popup),
-        default = true,
+        default = false,
     )
 
     /**
@@ -1126,7 +1126,7 @@ class Settings(private val appContext: Context) : PreferencesHolder {
      */
     var shouldShowJumpBackInCFR by lazyFeatureFlagPreference(
         appContext.getPreferenceKey(R.string.pref_key_should_show_jump_back_in_tabs_popup),
-        featureFlag = true,
+        featureFlag = false,
         default = { mr2022Sections[Mr2022Section.JUMP_BACK_IN_CFR] == true },
     )
 
@@ -1389,7 +1389,7 @@ class Settings(private val appContext: Context) : PreferencesHolder {
 
     var enableGeckoLogs by booleanPreference(
         appContext.getPreferenceKey(R.string.pref_key_enable_gecko_logs),
-        default = Config.channel.isDebug,
+        default = false,
     )
 
     fun amoCollectionOverrideConfigured(): Boolean {
@@ -1565,7 +1565,7 @@ class Settings(private val appContext: Context) : PreferencesHolder {
      */
     var showHomeOnboardingDialog by lazyFeatureFlagPreference(
         appContext.getPreferenceKey(R.string.pref_key_should_show_home_onboarding_dialog),
-        featureFlag = true,
+        featureFlag = false,
         default = { mr2022Sections[Mr2022Section.HOME_ONBOARDING_DIALOG_EXISTING_USERS] == true },
     )
 
@@ -1574,7 +1574,7 @@ class Settings(private val appContext: Context) : PreferencesHolder {
      */
     var showRecentTabsFeature by lazyFeatureFlagPreference(
         appContext.getPreferenceKey(R.string.pref_key_recent_tabs),
-        featureFlag = true,
+        featureFlag = false,
         default = { homescreenSections[HomeScreenSection.JUMP_BACK_IN] == true },
     )
 
@@ -1584,7 +1584,7 @@ class Settings(private val appContext: Context) : PreferencesHolder {
     var showRecentBookmarksFeature by lazyFeatureFlagPreference(
         appContext.getPreferenceKey(R.string.pref_key_recent_bookmarks),
         default = { homescreenSections[HomeScreenSection.RECENTLY_SAVED] == true },
-        featureFlag = true,
+        featureFlag = false,
     )
 
     /**
@@ -1717,7 +1717,7 @@ class Settings(private val appContext: Context) : PreferencesHolder {
     fun shouldShowOnboarding(hasUserBeenOnboarded: Boolean, isLauncherIntent: Boolean): Boolean {
         return if (!hasUserBeenOnboarded && isLauncherIntent) {
             FxNimbus.features.junoOnboarding.recordExposure()
-            true
+            false
         } else {
             false
         }
