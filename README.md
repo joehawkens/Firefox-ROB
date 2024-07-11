@@ -1,6 +1,7 @@
 # Firefox ROB (Read Only Browser)
 
 ![DEMO-PHOTO](https://github.com/joehawkens/Firefox-ROB/assets/57330752/16b584ff-2239-4c97-836a-6770dae3b4a8)
+
 (Left: Homescreen - Right: A browser page, cannot use the search bar and home button)
 
 The world is becoming increasingly dependent on smartphone and internet access. Gone are the days where you can walk into a DMV, Restauraunt, Doctors Office, Movie Theatre, or even small businesses without being required to use your smartphone in some capacity to be served. This is the reality of the world today. But what if you want to step away from the constant distraction and noise of internet? What if you're addicted to mindless internet browsing? What if you're trying to stay productive, but the  distraction of the world's knowledge at your fingertips constantly beckons you?
